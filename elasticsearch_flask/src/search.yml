@@ -1,0 +1,30 @@
+Classifies the provided line of text.
+---
+description: Searching Text.
+tags:
+- Search Text using ElasticSearch 
+consumes:
+- "application/json"
+produces:
+- "application/json"
+parameters:
+- name: text
+  in: query
+  required: true
+  description: Enter the text to search through corpus.
+  type: string
+  example: Search this text
+- name: Indices
+  in: query
+  required: true
+  description: Different Indices.
+  type: string
+  enum:
+      - t##u1
+      - t##u2
+      - t##u3
+      - t##u4
+      - t##u5
+responses:
+  200:
+    description: Success
