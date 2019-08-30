@@ -1,0 +1,12 @@
+[Unit]
+Description=ElasticSearch Flask Container
+After=docker-elasticsearch.service
+Requires=docker-elasticsearch.service
+
+[Service]
+Type=forking
+ExecStartPre=-/usr/bin/docker rm es_textsearch_instance
+ExecStart=/path_to_scripts/script_docker-esflask.sh
+
+[Install]
+WantedBy=multi-user.target
